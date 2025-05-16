@@ -1,0 +1,9 @@
+apiVersion: kaito.dev/v1alpha1
+kind: BatchJob
+metadata:
+  labels:
+    app.kubernetes.io/name: kaito-sample-repo
+    app.kubernetes.io/managed-by: kustomize
+  name: batchjob-sample
+spec:
+  # TODO(user): Add fields here
