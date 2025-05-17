@@ -17,6 +17,7 @@ limitations under the License.
 package v1alpha1
 
 import (
+	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -25,17 +26,18 @@ import (
 
 // BatchJobSpec defines the desired state of BatchJob.
 type BatchJobSpec struct {
-	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
-
-	// Foo is an example field of BatchJob. Edit batchjob_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	// TimeoutInMinutes is the maximum time in minutes that the job can run.
+	TimeoutInMinutes int32 `json:"timeoutSeconds,omitempty"`
+	// Step defines the single step of the batch job as a PodTemplateSpec.
+	Step corev1.PodTemplateSpec `json:"step,omitempty"`
 }
 
 // BatchJobStatus defines the observed state of BatchJob.
 type BatchJobStatus struct {
-	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
+	// JobStartedAt is the time when the job was started.
+	JobStartedAt metav1.Time `json:"jobStartedAt,omitempty"`
+	// StepStatus tracks the status of the step (pod) in the job.
+	StepStatus corev1.PodPhase `json:"stepStatus,omitempty"`
 }
 
 // +kubebuilder:object:root=true
