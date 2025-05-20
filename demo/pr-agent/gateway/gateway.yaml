@@ -1,0 +1,18 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  annotations:
+    alb.networking.azure.io/alb-id: /subscriptions/ff05f55d-22b5-44a7-b704-f9a8efd493ed/resourcegroups/kaito-pr-agent-sample-1/providers/Microsoft.ServiceNetworking/trafficControllers/kaito-sample-pr-agent
+  name: pr-agent-gateway
+spec:
+  addresses:
+  - type: alb.networking.azure.io/alb-frontend
+    value: kaito-sample-pr-agent-frontend
+  gatewayClassName: azure-alb-external
+  listeners:
+  - allowedRoutes:
+      namespaces:
+        from: All
+    name: http-listener
+    port: 80
+    protocol: HTTP
