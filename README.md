@@ -1,23 +1,22 @@
 # kaito-sample-repo
-This repository is used to build and iterate on an Automated Pull Request (PR) Reviewer powered by Kubernetes AI Toolchain Operator (KAITO)! The KAITO-powered PR reviwer helps streamline code reviews by analyzing pull requests and leaving intelligent feedback automatically. As this repository is augmented with merged (and approved) code changes, the PR reviewer can be continuously tuned to provide better feedback on each newly submitted pull request.
 
-✨ What can a KAITO-powered PR reviewer do?
+This repository is a sample app for building Kubernertes operator of batch jobs.
 
-🔍 Analyze PR content (title, description, code diffs)
-💬 Comment on potential issues, improvements, security concerns, or missing context
-🧠 Leverage KAITO  to review code quality, documentation, and style
-🔄 Integrates with GitHub via Webhooks or GitHub Apps
-📦 Easy to deploy to any cloud or local environment
+It is currently in the initialization phase and serves as a foundation for managing batch tasks within your Kubernetes cluster. The codebase follows Kubebuilder best practices, making it easy to extend.
+
+To ensure code quality, an Automated Pull Request (PR) Reviewer powered by Kubernetes AI Toolchain Operator (KAITO) is run and iterated agaist this repo.
 
 ## Getting Started
 
 ### Prerequisites
+
 - go version v1.23.0+
 - docker version 17.03+.
 - kubectl version v1.11.3+.
 - Access to a Kubernetes v1.11.3+ cluster.
 
 ### To Deploy on the cluster
+
 **Build and push your image to the location specified by `IMG`:**
 
 ```sh
@@ -53,6 +52,7 @@ kubectl apply -k config/samples/
 >**NOTE**: Ensure that the samples has default values to test it out.
 
 ### To Uninstall
+
 **Delete the instances (CRs) from the cluster:**
 
 ```sh
@@ -116,7 +116,7 @@ previously added to 'dist/chart/values.yaml' or 'dist/chart/manager/manager.yaml
 is manually re-applied afterwards.
 
 ## Contributing
-Contributions are welcome! Whether it's a bug fix, feature idea, or documentation update - every bit helps. Feel free to open an issue or submit a pull request. 
+Contributions are welcome! Whether it's a bug fix, feature idea, or documentation update - every bit helps. Feel free to open an issue or submit a pull request.
 
 **NOTE:** Run `make help` for more information on all potential `make` targets
 
@@ -137,4 +137,3 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
