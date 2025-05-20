@@ -64,7 +64,7 @@ stringData :
     api_base = "" # the base url for your huggingface inference endpoint
 
     [ollama]
-    api_base = "http://workspace-qwen-2-5-coder-32b-instruct-with-adapter.default.svc/v1" # the base url for your local Llama 2, Code Llama, and other models inference endpoint. Acquire through https://ollama.ai/
+    api_base = "http://workspace-qwen-2-5-coder-32b-instruct.default.svc/v1" # the base url for your local Llama 2, Code Llama, and other models inference endpoint. Acquire through https://ollama.ai/
 
     [vertexai]
     vertex_project = "" # the google cloud platform project name for your vertexai deployment
