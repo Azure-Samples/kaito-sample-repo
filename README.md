@@ -1,8 +1,13 @@
 # kaito-sample-repo
-// TODO(user): Add simple overview of use/purpose
+This repository is used to build and iterate on an Automated Pull Request (PR) Reviewer powered by Kubernetes AI Toolchain Operator (KAITO)! The KAITO-powered PR reviwer helps streamline code reviews by analyzing pull requests and leaving intelligent feedback automatically. As this repository is augmented with merged (and approved) code changes, the PR reviewer can be continuously tuned to provide better feedback on each newly submitted pull request.
 
-## Description
-// TODO(user): An in-depth paragraph about your project and overview of use
+✨ What can a KAITO-powered PR reviewer do?
+
+🔍 Analyze PR content (title, description, code diffs)
+💬 Comment on potential issues, improvements, security concerns, or missing context
+🧠 Leverage KAITO  to review code quality, documentation, and style
+🔄 Integrates with GitHub via Webhooks or GitHub Apps
+📦 Easy to deploy to any cloud or local environment
 
 ## Getting Started
 
@@ -16,7 +21,7 @@
 **Build and push your image to the location specified by `IMG`:**
 
 ```sh
-make docker-build docker-push IMG=<some-registry>/kaito-sample-repo:tag
+make docker-build docker-push IMG=<your-registry>/kaito-sample-repo:tag
 ```
 
 **NOTE:** This image ought to be published in the personal registry you specified.
@@ -32,7 +37,7 @@ make install
 **Deploy the Manager to the cluster with the image specified by `IMG`:**
 
 ```sh
-make deploy IMG=<some-registry>/kaito-sample-repo:tag
+make deploy IMG=<your-registry>/kaito-sample-repo:tag
 ```
 
 > **NOTE**: If you encounter RBAC errors, you may need to grant yourself cluster-admin
@@ -75,7 +80,7 @@ Following the options to release and provide this solution to the users.
 1. Build the installer for the image built and published in the registry:
 
 ```sh
-make build-installer IMG=<some-registry>/kaito-sample-repo:tag
+make build-installer IMG=<your-registry>/kaito-sample-repo:tag
 ```
 
 **NOTE:** The makefile target mentioned above generates an 'install.yaml'
@@ -111,7 +116,7 @@ previously added to 'dist/chart/values.yaml' or 'dist/chart/manager/manager.yaml
 is manually re-applied afterwards.
 
 ## Contributing
-// TODO(user): Add detailed information on how you would like others to contribute to this project
+Contributions are welcome! Whether it's a bug fix, feature idea, or documentation update - every bit helps. Feel free to open an issue or submit a pull request. 
 
 **NOTE:** Run `make help` for more information on all potential `make` targets
 
